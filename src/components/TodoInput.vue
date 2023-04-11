@@ -21,7 +21,8 @@ export default {
         addTodo() {
             if (this.newTodoItem !== "") {
                 var value = this.newTodoItem && this.newTodoItem.trim();
-                localStorage.setItem(value, value);
+                this.$emit('addTodo', value);
+                // localStorage.setItem(value, value);
                 this.clearInput();
             }else {
                 alert('빈 문자열은 저장 할 수 없습니다.!')
